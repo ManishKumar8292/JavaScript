@@ -52,3 +52,43 @@ console.log(finalObject); // { '1': 'a','2': 'b','3': 'b','4': 'a', '5': 'b','6'
 
 const finalObj2 = {...obj1,...obj2,...obj3};
 console.log(finalObj2); //{ '1': 'a', '2': 'b', '3': 'b', '4': 'a', '5': 'b', '9': 'a' }
+
+
+const users = [
+    {
+        id: 1,
+        email: "h@gmail.com"
+    },
+    {
+        id: 1,
+        email: "m@gmail.com"
+    },
+    {
+        id: 1,
+        email: "r@gmail.com"
+    },
+]
+
+console.log(users[0].email); //h@gmail.com
+
+console.log(Object.keys(tikTokUser)); //[ 'email', 'username', 'isLogin', 'gender', 'age' ]
+
+console.log(Object.values(tikTokUser)); //[ 'sammy@gmail.com', 'Samm', true, 'Male', 29 ]
+
+console.log(tikTokUser.hasOwnProperty('gender')); //true
+
+console.log(Object.entries(tikTokUser)) //[[ 'email', 'sammy@gmail.com' ],[ 'username', 'Samm' ],[ 'isLogin', true ],[ 'gender', 'Male' ],[ 'age', 29 ]]
+
+/* De-Structuring */
+
+const courses = {
+    courseName:"JavaScript",
+    fee:999,
+    courseInstructor :"Manish",
+}
+
+const {courseName : name,fee,courseInstructor:instructor}=courses;
+
+console.log(name); //JavaScript
+console.log(fee); //999
+console.log(instructor); //Manish
