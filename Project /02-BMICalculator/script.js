@@ -7,7 +7,7 @@ form.addEventListener("submit", (e) => {
   const height = Number(inputs[0].value);
   const weight = Number(inputs[1].value);
   if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-    alert("Please fill correct values");
+      result.innerHTML = `<span>Please fill correct values</span>`;
     return;
   }
 
