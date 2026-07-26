@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>0 UNSENT Client has been created. open() not called yet.</p>
+    <p>1 OPENED open() has been called.</p>
+    <p>
+      2 HEADERS_RECEIVED send() has been called, and headers and status are
+      available.
+    </p>
+    <p>3 LOADING Downloading; responseText holds partial data.</p>
+    <p>4 DONE The operation is complete.</p>
+
+    <script>
+      const requestUrl = "https://randomuser.me/api/";
+
+      const xmh = new XMLHttpRequest();
+      xmh.open("GET", requestUrl);
+      //   console.log(xmh.readyState);
+      xmh.onreadystatechange = function () {
+        console.log(xmh.readyState);
+        if (xmh.readyState === 4) {
+          //   const data = this.response;
+          //   console.log(typeof data); //string
+          const data = JSON.parse(this.response);
+          console.log(typeof data); //object
+          console.log(
+            data.results[0].name.title +
+              " " +
+              data.results[0].name.first +
+              " " +
+              data.results[0].name.last,
+          ); //object
+          console.log(data.results[0].picture.large);
+        }
+      };
+      xmh.send();
+    </script>
+  </body>
+</html>
