@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>set interval</title>
+  </head>
+  <body>
+    <h1>Chai aur JS</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <script>
+      let intervalId;
+      const sayName = (name) => {
+        console.log(`Hi ${name} ${new Date().toLocaleString()}`);
+      };
+
+      document.querySelector("#start").addEventListener("click", () => {
+        if (!intervalId) {
+          intervalId = setInterval(sayName, 2000, "Manish");
+        }
+      });
+      document.querySelector("#stop").addEventListener("click", () => {
+        clearInterval(intervalId);
+        intervalId = null;
+      });
+    </script>
+  </body>
+</html>
