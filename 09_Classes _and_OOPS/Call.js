@@ -1,9 +1,9 @@
-function Setusername(myThis, username) {
-  myThis.username = username;
+function Setusername(username) {
+  this.username = username;
 }
 
 function CreateUserData(username, email, password) {
-  Setusername(this, username);
+  Setusername.call(this.username);
   this.email = email;
   this.password = password;
 }
