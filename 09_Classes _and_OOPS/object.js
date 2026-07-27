@@ -34,3 +34,15 @@ const tea = new createUser("tea", 250);
 console.log(tea.printMe()); //This is the username: tea
 console.log(tea.increasePrice()); //250;
 console.log(tea.increasePrice()); //251
+
+/* 
+Here's what happens behind the screens when the new keyword is used:
+
+A new object is created: The new keyword initiates the creation of a new JavaScript object.
+
+A prototype is linked: The newly created object gets linked to the prototype of the constructor function. This means that it has access to properties and methods defined on the constructor's prototype.
+
+The constructor is called: The constructor function is called with the specified arguments and this is bound to newly created object. If no explicit return value is specified from the constructor JavaScript assumes this, the newly crated object, to be the intended return value.
+
+The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object,array,function ,etc.), the newly created object is returned.
+ */
