@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>closure</title>
+  </head>
+  <body>
+    <h1>Real life example of closure</h1>
+    <button id="green">Green</button>
+    <button id="orange">Orange</button>
+  </body>
+  <script>
+    function outer() {
+      let username = "manish";
+      return function inner() {
+        console.log("Inner : ", username);
+      };
+    }
+    const myfunc = outer();
+    myfunc();
+  </script>
+  <script>
+    function changeColor(color) {
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+    document.querySelector("#green").onclick = changeColor("green");
+    document.querySelector("#orange").onclick = changeColor("orange");
+  </script>
+</html>
